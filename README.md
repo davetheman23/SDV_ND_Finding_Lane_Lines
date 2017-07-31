@@ -13,8 +13,8 @@ The pipeline consists of the following steps:
 1. apply Hough transform to find pixels that are connected or on the same line
 1. group the hough lines together based on the slope of each line, and if a line has a slope very close to the average slope, then add it to become part of the line group
 1. filter the line group by the following somewhat hacky criteria:
-  * a line group should have at least 5 lines
-  * a line group should have a slope (i.e. delta y / delta x) which absolute value is between 0.5 and 0.9
+    * a line group should have at least 5 lines
+    * a line group should have a slope (i.e. delta y / delta x) which absolute value is between 0.5 and 0.9
 1. do linear regression fitting to get a slope and a point of all the line points collected for each line group
 1. extrapolate the line based on the slope and point from the previous step, and use the region of interest to bound the extrapolated line
 1. draw the extrapolated lines onto the original image
